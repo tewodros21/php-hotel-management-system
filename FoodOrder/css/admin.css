@@ -1,0 +1,295 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.wrapper{
+    padding: 1%;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.text-center{
+    text-align: center;
+}
+
+.clearfix{
+    float: none;
+    clear: both;
+}
+.tbl-full{
+    width: 100%;
+}
+
+table tr th{
+    border-bottom: 1px solid black;
+    padding: 1%;
+    text-align: left;
+}
+
+table tr td{
+    padding: 1%;
+}
+
+.btn-primary{
+    background-color: #1e90ff;
+    padding: 1%;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    
+
+}
+.btn-primary:hover{
+    background-color: #3742fa;
+}
+
+.btn-secondary{
+    background-color: #7bed9f;
+    padding: 1%;
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+
+}
+.btn-secondary:hover{
+    background-color: #2ed573;
+}
+
+.btn-danger{
+    background-color: #f16b81;
+    padding: 1%;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+
+}
+.btn-danger:hover{
+    background-color: #ff4757;
+}
+
+.success{
+    color: #2ed573;
+}
+.error{
+    color: #ff4757;
+}
+
+/* css for menu */
+
+.menu{
+    border-bottom: 1px solid gray;
+}
+
+.menu ul{
+    list-style-type: none;
+}
+
+.menu ul li{
+    display: inline;
+    padding: 1%;
+}
+
+.menu ul li a{
+    text-decoration: none;
+    font-weight: bold;
+    color: cadetblue;
+}
+.menu ul li a:hover{
+    color: black;
+}
+
+.main-content{
+    background-color: #f1f2f6;
+    padding: 3% 0;
+}
+
+.col-4{
+    width: 18%;
+    background-color: white;
+    margin: 1%;
+    padding: 2%;
+    float: left;
+}
+/* css for footer */
+
+.footer{
+    background-color: #042331;
+    color: rgb(79, 21, 216);
+    display: right;
+    
+}
+
+/*try navigation*/
+
+.navigation
+{
+
+ position:fixed;
+ width: 60px;
+ height: 100%;
+ background: #042331;
+ transition: 0.5s;
+ overflow: hidden;
+ 
+ }
+ .navigation
+ {
+ 
+  width: 250px;
+  
+  } 
+  
+  .navigation ul li:hover
+  {
+    
+    background: #042331;
+     
+  } 
+  
+  .navigation ul{
+  
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   }
+   
+   .navigation ul li{
+   
+   position: relative;
+   width: 100%;
+   list-style: none;
+   } 
+   
+    .navigation ul li a{
+    
+    position: relative;
+    display: block;
+    width: 100%;
+    display: flex;
+    text-decoration: none;
+    color:#fff;
+    border-bottom: 1px solid black;
+    box-sizing: border-box;
+    border-top: 1px solid reba(255,255,255,.1);
+
+    }
+    
+    ul li:hover a{
+       padding-left: 40px;
+    }
+
+    .navigation ul li a .icon{
+    
+    position: relative;
+    display: block;
+    min-width: 60px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    }
+    
+    .navigation ul li a .icon .fa
+    {
+    
+    font-size: 24px;
+    }
+    
+    .navigation ul li a .title{
+    position: relative;
+    display: block;
+    padding: 0 10px;
+    height: 60px;
+    line-height: 30px;
+    text-align: center;
+    white-space: nowrap;
+   
+}
+
+.content {
+    padding: 1rem;
+    padding-left: 350.5px;
+}
+
+.container-fluid, .container-lg, .container-md, .container-sm, .container-xl {
+    width: 100%;
+    padding-right: 7.5px;
+    padding-left: 7.5px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.col-lg-3 {
+    -ms-flex: 0 0 25%;
+    flex: 0 0 25%;
+    max-width: 25%;
+  }
+
+
+  /* Form */
+
+
+  input[type=text], select {
+    width: 70%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  input[type=password], select {
+    width: 71%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  input[type=submit] {
+    width: 50%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  input[type=submit]:hover {
+    background-color: #45a049;
+  }
+  
+  div {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 30px;
+  }
+
+  .col-6
+  {
+      position: relative;
+      width: 100%;
+      padding-right: 7.5px;
+      padding-left: 7.5px;
+  }
+
+  .col-md-12{
+    position: relative;
+    width: 100%;
+    padding-right: 40.5px;
+    padding-left: 7.5px;
+
+  }
+
+  
+
+      
+
+       

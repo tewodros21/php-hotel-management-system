@@ -1,0 +1,165 @@
+<!-- order section starts  -->
+<style>
+    .food-menu-desc{
+    width: 70%;
+    float: left;
+    margin-left: 8%;}
+    .food-price{
+    font-size: 1.2rem;
+    margin: 2% 0;
+}
+
+</style>
+   <?php
+        if(isset($_GET['food_id'])) {
+            //get the food id and details
+            $food_id = $_GET['food_id'];
+
+            //create the sql query
+            $sql="SELECT * FROM tbl_food WHERE id=$food_id";
+
+            //excute the query
+            $res= mysqli_query($conn, $sql);
+
+             //check the data i savilable or not 
+            $count = mysqli_num_rows($res);
+
+             if($count==1){
+                
+                     //get the detail
+                     $row = mysqli_fetch_assoc($res);
+
+                     
+                     $title = $row['title'];
+                     $price = $row['price'];
+                     $image_name =$row['image_name'];
+                    
+                }
+                else{
+                    header('location:'.SITEURL); }
+            }
+            else{
+                header('location:'.SITEURL);
+            }
+              
+                ?>
+
+                
+
+<section class="order" id="order">
+
+<h1 class="heading"> ትዛዝዎ  <span>ይፈጽሙ </span> </h1>
+
+
+<div class="row">
+
+    <form action="" data-aos="fade-right" method="POST">
+        <input type="text" name="full-name" placeholder="your name" class="box">
+        <input type="email" name="email" placeholder="your email" class="box">
+        <input type="number" name="contact" placeholder="mobile number" class="box">
+        <textarea name="address" id="" cols="30" rows="10" class="box address" placeholder="your address"></textarea>
+        <input type="submit" name="submit" value="order now" class="btn"><br />
+        
+    
+        </form> 
+
+    <div class="image" data-aos="fade-left">
+    <?php
+
+                     
+            if($image_name==""){
+            echo "<div class='error'>Image is not.</div>";
+            }
+            else{
+                ?>
+                <img src="<?php echo SITEURL; ?>images/food/<?php echo $image_name; ?>" style="g-responsive; border-radius: 15px;"   alt="" width=90% >
+            <?php
+                
+            }
+
+?>
+<h1 style="text-align: center;"><b><?php echo $title; ?></b></h1>
+<input type="hidden" name="food" value="<?php echo $title; ?>">
+
+<p style="text-align: center;"><?php echo $price; ?></h1><br>
+<input type="hidden" name="price" value="<?php echo $price; ?>">
+
+<h2>Quantity</h2>
+<input style="padding: 1rem;
+    margin: 1rem 0;
+    font-size: 1.5rem;
+    color: #333;
+    text-transform: none;
+    background: #f0f0f0;
+    width: 70%;"type="number" name="qty" class="input-responsive" value="1" required="">
+</div>
+
+</div>
+
+<?php
+ 
+ 
+ if(isset($_POST['submit'])){
+
+    //get data from the form
+    $food = $_POST['food'];
+    $price = $_POST['price'];
+    $qty = $_POST['qty'];
+
+    $total = $price * $qty;
+
+    $order_date = date("y-m-d h:i:sa");
+
+    $status = "Ordered";
+   
+    $customer_name = $_POST['full-name'];
+    $customer_email = $_POST['email'];
+    $customer_contact = $_POST['contact'];
+    $customer_address = $_POST['address'];
+
+
+    //save order in db
+    //crate sql to save data
+
+    $sql2 = "INSERT INTO tbl_order SET
+         food = '$food',  
+         price = '$price',
+         qty = '$qty',
+         total = '$total',
+         order_date = '$order_date',
+         status = '$status',
+         customer_name = '$customer_name',
+         customer_contact = '$customer_contact',
+         customer_email = '$customer_email',
+         customer_address = '$customer_address',
+
+        ";
+
+            // echo $sql2; die();
+            //excute the query
+             $res2 = mysqli_query($conn, $sql2);
+
+             if($res2==true){
+                 $_SESSION['order']= "<div class='success'> Food Ordered Successfully</div>";
+                 //redirect page manage admin page
+                 header('location:'.SITEURL);
+             }
+             else{
+             
+                 //create a session variabel to dispaly a msg
+                 $_SESSION['order']= "<div class='error'> Food not Ordered Successfully</div>";
+                 //redirect page manage admin page
+                 header('location:'.SITEURL);
+             }
+
+
+ }
+
+   
+
+?>
+
+</section>
+
+
+
